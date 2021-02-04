@@ -14,6 +14,19 @@ class Rect {
         this.pos = new Vec;
         this.size = new Vec(w, h);
     }
+    //Rectangles
+    get left () {
+        return this.pos.x - this.size.x / 2;
+    }
+    get right () {
+        return this.pos.x + this.size.x / 2;
+    }
+    get top () {
+        return this.pos.y - this.size.y / 2;
+    }
+    get bottom () {
+        return this.pos.y + this.size.y / 2;
+    }
 }
 
 //The ball
@@ -24,51 +37,59 @@ class Ball extends Rect {
     }
 }
 
-//Select the canvas & get context of canvas
+//Wrap animation of ball
+class Pong {
+    constructor(canvas) {
+        this._canvas = canvas;
+        this._context = canvas.getContext("2d");
+
+        //New ball
+        this.ball = new Ball;
+
+        //Test to change position of ball
+        this.ball.pos.x = 100;
+        this.ball.pos.y = 50;
+
+        this.ball.vel.x = 100;
+        this.ball.vel.y = 100;
+
+        //Animation frames
+        let lastTime;
+
+        function callback(millis){
+            if (lastTime) {
+                update((millis - lastTime) / 1000);
+            }
+            lastTime = millis;
+            requestAnimationFrame(callback);
+        }
+        callback();
+
+    }
+    //The movement of the ball
+    update(dt) {
+        this.ball.pos.x += this.ball.vel.x * dt;
+        this.ball.pos.y += this.ball.vel.y * dt;
+
+        // Make ball stay within the canvas area
+        if (this.ball.left < 0 || this.ball.right > this._canvas.width){
+        this.ball.vel.x = -this.ball.vel.x;
+        }
+        if (this.ball.top < 0 || this.ball.bottom > this._canvas.height){
+        this.ball.vel.y = -this.ball.vel.y;
+        }
+
+        //PinkPong-field
+        this._context.fillStyle = "#FB8CD8";
+        this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+        // PinkPong ball
+        this._context.fillStyle = "#FA05A9";
+        //Paint ball
+        this._context.fillRect(this.ball.pos.x, this.ball.pos.y, this.ball.size.x, this.ball.size.y);
+    }
+}
+
+//The field & ball
 const canvas = document.getElementById("pong");
+const pong = new Pong(canvas);
 
-const context = canvas.getContext("2d");
-
-//New ball
-const ball = new Ball;
-//Test to change position of ball
-ball.pos.x = 100;
-ball.pos.y = 50;
-
-ball.vel.x = 100;
-ball.vel.y = 100;
-
-//Animation frames
-let lastTime;
-
-function callback(millis){
-    if (lastTime) {
-        update((millis - lastTime) / 1000);
-    }
-    lastTime = millis;
-    requestAnimationFrame(callback);
-}
-
-//The movement of the ball
-function update(dt) {
-    ball.pos.x += ball.vel.x * dt;
-    ball.pos.y += ball.vel.y * dt;
-
-    // Make ball stay within the canvas area
-    if (ball.pos.x < 0 || ball.pos.x > canvas.width){
-        ball.vel.x = -ball.vel.x;
-    }
-    if (ball.pos.y < 0 || ball.pos.y > canvas.height){
-        ball.vel.y = -ball.vel.y;
-    }
-
-    //PinkPong-field
-    context.fillStyle = "#FB8CD8";
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    // PinkPong ball
-    context.fillStyle = "#FA05A9";
-    //Paint ball
-    context.fillRect(ball.pos.x, ball.pos.y, ball.size.x, ball.size.y);
-}
-
-callback();
