@@ -61,10 +61,19 @@ class Pong {
         this.ball.vel.x = 100;
         this.ball.vel.y = 100;
 
+        //Players
         this.players = [
             new Player,
             new Player,
-        ]
+        ];
+        //Player 1
+        this.players[0].pos.x = 40;
+        //Player 2
+        this.players[1].pos.x = this._canvas.width - 40;
+        //Put player rectangles in the middle
+        this.players.forEach(player => {
+            player.pos.y = this._canvas.height / 2;
+        });
 
         //Animation frames
         let lastTime;
@@ -93,7 +102,7 @@ class Pong {
         // PinkPong ball
         this._context.fillStyle = "#FA05A9";
         //Paint ball
-        this._context.fillRect(rect.pos.x, rect.pos.y, rect.size.x, rect.size.y);
+        this._context.fillRect(rect.left, rect.top, rect.size.x, rect.size.y);
     }
     //The movement of the ball
     update(dt) {
