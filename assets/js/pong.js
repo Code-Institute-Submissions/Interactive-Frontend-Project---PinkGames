@@ -27,22 +27,48 @@ class Ball extends Rect {
 //Select the canvas & get context of canvas
 const canvas = document.getElementById("pong");
 
-const context = canvas.getContext("2d"); //Method & properties
+const context = canvas.getContext("2d");
 
 //New ball
 const ball = new Ball;
 //Test to change position of ball
-ball.pos.x = 200;
+ball.pos.x = 100;
 ball.pos.y = 50;
 
-//Animate the ball
+ball.vel.x = 100;
+ball.vel.y = 100;
 
-//PinkPong-field
-context.fillStyle = "#FB8CD8";
-context.fillRect(0, 0, canvas.width, canvas.height);
+//Animation frames
+let lastTime;
 
-// PinkPong ball
-context.fillStyle = "#FA05A9";
-//Paint ball
-context.fillRect(ball.pos.x, ball.pos.y, ball.size.x, ball.size.y);
+function callback(millis){
+    if (lastTime) {
+        update((millis - lastTime) / 1000);
+    }
+    lastTime = millis;
+    requestAnimationFrame(callback);
+}
 
+//The movement of the ball
+function update(dt) {
+    ball.pos.x += ball.vel.x * dt;
+    ball.pos.y += ball.vel.y * dt;
+
+    // Make ball stay within the canvas area
+    if (ball.pos.x < 0 || ball.pos.x > canvas.width){
+        ball.vel.x = -ball.vel.x;
+    }
+    if (ball.pos.y < 0 || ball.pos.y > canvas.height){
+        ball.vel.y = -ball.vel.y;
+    }
+
+    //PinkPong-field
+    context.fillStyle = "#FB8CD8";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    // PinkPong ball
+    context.fillStyle = "#FA05A9";
+    //Paint ball
+    context.fillRect(ball.pos.x, ball.pos.y, ball.size.x, ball.size.y);
+}
+
+callback();
