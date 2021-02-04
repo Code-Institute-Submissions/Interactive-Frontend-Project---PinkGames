@@ -14,7 +14,7 @@ class Rect {
         this.pos = new Vec;
         this.size = new Vec(w, h);
     }
-    //Rectangles
+
     get left () {
         return this.pos.x - this.size.x / 2;
     }
@@ -37,6 +37,14 @@ class Ball extends Rect {
     }
 }
 
+//Player set-up
+class Player extends Rect {
+    constructor() {
+        super(20, 100);
+        this.score = 0;
+    }
+}
+
 //Wrap animation of ball
 class Pong {
     constructor(canvas) {
@@ -52,6 +60,11 @@ class Pong {
 
         this.ball.vel.x = 100;
         this.ball.vel.y = 100;
+
+        this.players = [
+            new Player,
+            new Player,
+        ]
 
         //Animation frames
         let lastTime;
@@ -72,6 +85,8 @@ class Pong {
         this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
         //Draw the ball
         this.drawRect(this.ball);
+        //Draw players
+        this.players.forEach(player => this.drawRect(player));
     }
 
     drawRect(rect) {
