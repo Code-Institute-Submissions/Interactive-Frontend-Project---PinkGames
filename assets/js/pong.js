@@ -86,7 +86,13 @@ class Pong {
             requestAnimationFrame(callback);
         }
         callback();
-
+    }
+    //Make ball bouce off the player rectangles
+    collide(player, ball) {
+        if (player.left < ball.right && player.right > ball.left && 
+            player.top < ball.bottom && player.bottom > ball.top) {
+            ball.vel.x = -ball.vel.x    
+            }
     }
     draw() {
         //PinkPong-field
@@ -119,6 +125,9 @@ class Pong {
 
         //Player 2 (computer driven, will follow the ball)
         this.players[1].pos.y = this.ball.pos.y;
+
+        //The ball and player rectangle collision
+        this.players.forEach(player => this.collide(player, this.ball));
 
         //Call draw
         this.draw();
