@@ -54,13 +54,6 @@ class Pong {
         //New ball
         this.ball = new Ball;
 
-        //Position of ball
-        this.ball.pos.x = 100;
-        this.ball.pos.y = 50;
-
-        this.ball.vel.x = 100;
-        this.ball.vel.y = 100;
-
         //Players
         this.players = [
             new Player,
@@ -86,6 +79,9 @@ class Pong {
             requestAnimationFrame(callback);
         }
         callback();
+
+        //Run reset
+        this.reset();
     }
     //Make ball bouce off the player rectangles
     collide(player, ball) {
@@ -110,6 +106,14 @@ class Pong {
         //Paint ball
         this._context.fillRect(rect.left, rect.top, rect.size.x, rect.size.y);
     }
+    //Reset game
+    reset() {
+        //Position of ball
+        this.ball.pos.x = this._canvas.width / 2;
+        this.ball.pos.y = this._canvas.height / 2;
+        this.ball.vel.x = 0;
+        this.ball.vel.y = 0;
+    }
     //The movement of the ball
     update(dt) {
         this.ball.pos.x += this.ball.vel.x * dt;
@@ -117,7 +121,10 @@ class Pong {
 
         // Make ball stay within the canvas area
         if (this.ball.left < 0 || this.ball.right > this._canvas.width) {
-            this.ball.vel.x = -this.ball.vel.x;
+            //Game score
+            const playerId = this.ball.vel.x < 0 | 0;
+            this.players[playerId].score++;
+            this.reset();
         }
         if (this.ball.top < 0 || this.ball.bottom > this._canvas.height){
             this.ball.vel.y = -this.ball.vel.y;
