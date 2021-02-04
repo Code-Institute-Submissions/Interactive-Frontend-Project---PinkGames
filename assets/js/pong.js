@@ -46,7 +46,7 @@ class Pong {
         //New ball
         this.ball = new Ball;
 
-        //Test to change position of ball
+        //Position of ball
         this.ball.pos.x = 100;
         this.ball.pos.y = 50;
 
@@ -56,9 +56,9 @@ class Pong {
         //Animation frames
         let lastTime;
 
-        function callback(millis){
+        const callback = (millis) => {
             if (lastTime) {
-                update((millis - lastTime) / 1000);
+                this.update((millis - lastTime) / 1000);
             }
             lastTime = millis;
             requestAnimationFrame(callback);
@@ -72,11 +72,11 @@ class Pong {
         this.ball.pos.y += this.ball.vel.y * dt;
 
         // Make ball stay within the canvas area
-        if (this.ball.left < 0 || this.ball.right > this._canvas.width){
-        this.ball.vel.x = -this.ball.vel.x;
+        if (this.ball.left < 0 || this.ball.right > this._canvas.width) {
+            this.ball.vel.x = -this.ball.vel.x;
         }
         if (this.ball.top < 0 || this.ball.bottom > this._canvas.height){
-        this.ball.vel.y = -this.ball.vel.y;
+            this.ball.vel.y = -this.ball.vel.y;
         }
 
         //PinkPong-field
