@@ -114,6 +114,14 @@ class Pong {
         this.ball.vel.x = 0;
         this.ball.vel.y = 0;
     }
+    //Start game
+    start() {
+        if (this.ball.vel.x === 0 && this.ball.vel.y === 0) {
+            this.ball.vel.x = 300;
+            this.ball.vel.y = 300;
+        }
+    }
+
     //The movement of the ball
     update(dt) {
         this.ball.pos.x += this.ball.vel.x * dt;
@@ -148,4 +156,9 @@ const pong = new Pong(canvas);
 //Player 1 (will follow the mouse)
 canvas.addEventListener("mousemove", event => {
     pong.players[0].pos.y = event.offsetY;
+});
+
+//Start game after rest
+canvas.addEventListener("click", event => {
+    pong.start();
 });
