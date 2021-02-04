@@ -66,6 +66,20 @@ class Pong {
         callback();
 
     }
+    draw() {
+        //PinkPong-field
+        this._context.fillStyle = "#FB8CD8";
+        this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+        //Draw the ball
+        this.drawRect(this.ball);
+    }
+
+    drawRect(rect) {
+        // PinkPong ball
+        this._context.fillStyle = "#FA05A9";
+        //Paint ball
+        this._context.fillRect(rect.pos.x, rect.pos.y, rect.size.x, rect.size.y);
+    }
     //The movement of the ball
     update(dt) {
         this.ball.pos.x += this.ball.vel.x * dt;
@@ -78,14 +92,8 @@ class Pong {
         if (this.ball.top < 0 || this.ball.bottom > this._canvas.height){
             this.ball.vel.y = -this.ball.vel.y;
         }
-
-        //PinkPong-field
-        this._context.fillStyle = "#FB8CD8";
-        this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
-        // PinkPong ball
-        this._context.fillStyle = "#FA05A9";
-        //Paint ball
-        this._context.fillRect(this.ball.pos.x, this.ball.pos.y, this.ball.size.x, this.ball.size.y);
+        //Call draw
+        this.draw();
     }
 }
 
