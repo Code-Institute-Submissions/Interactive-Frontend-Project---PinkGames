@@ -32,7 +32,7 @@ class Rect {
 //The ball
 class Ball extends Rect {
     constructor() {
-        super(10, 10)
+        super(15, 15)
         this.vel = new Vec;
     }
 }
@@ -116,6 +116,10 @@ class Pong {
         if (this.ball.top < 0 || this.ball.bottom > this._canvas.height){
             this.ball.vel.y = -this.ball.vel.y;
         }
+
+        //Player 2 (computer driven, will follow the ball)
+        this.players[1].pos.y = this.ball.pos.y;
+
         //Call draw
         this.draw();
     }
@@ -125,3 +129,7 @@ class Pong {
 const canvas = document.getElementById("pong");
 const pong = new Pong(canvas);
 
+//Player 1 (will follow the mouse)
+canvas.addEventListener("mousemove", event => {
+    pong.players[0].pos.y = event.offsetY;
+});
