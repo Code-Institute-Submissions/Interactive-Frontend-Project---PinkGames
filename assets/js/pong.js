@@ -117,8 +117,8 @@ class Pong {
     //Start game
     start() {
         if (this.ball.vel.x === 0 && this.ball.vel.y === 0) {
-            this.ball.vel.x = 300;
-            this.ball.vel.y = 300;
+            this.ball.vel.x = 200 * (Math.random() > .3 ? 1 : -1);
+            this.ball.vel.y = 200 * (Math.random() * 2 -1);
         }
     }
 
