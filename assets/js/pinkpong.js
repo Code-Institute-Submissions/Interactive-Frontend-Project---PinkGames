@@ -108,7 +108,7 @@ function update() {
     ball.y += ball.velocityY;
 
     //AI to control the computer's paddle
-    let computerLevel = 0.1;
+    let computerLevel = 0.9;
     com.y += (ball.y - (com.y + com.height / 2)) * computerLevel;
 
     if (ball.y - ball.radius > cvs.height || ball.y - ball.radius < 0) {
