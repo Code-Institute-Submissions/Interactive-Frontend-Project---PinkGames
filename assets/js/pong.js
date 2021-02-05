@@ -6,6 +6,15 @@ class Vec {
         this.x = x;
         this.y = y;
     }
+    //Consistency in the balls speed
+    get len() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+    set len(value) {
+        const fact = value / this.len;
+        this.x *= fact;
+        this.y *= fact;
+    }
 }
 
 // Data structure for rectangles, width and height, position
@@ -117,8 +126,11 @@ class Pong {
     //Start game
     start() {
         if (this.ball.vel.x === 0 && this.ball.vel.y === 0) {
+            //Make ball go in random directions when game is started
+            //Apply the methos that gives the ball consistent speed
             this.ball.vel.x = 200 * (Math.random() > .3 ? 1 : -1);
             this.ball.vel.y = 200 * (Math.random() * 2 -1);
+            this.ball.vel.len = 150;
         }
     }
 
