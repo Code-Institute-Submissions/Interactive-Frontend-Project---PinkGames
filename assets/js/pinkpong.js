@@ -78,6 +78,37 @@ function update() {
         ball.y - ball.radius < 0) {
             velocityY = - velocityY;
         }
+
+    //Collision detection of paddle and ball
+    let player = (ball.x < canvas.width/2) ? user : com;
+    
+    //If ball hits paddle
+    if (collision(ball, player)) {
+        //Where the ball hits the paddle
+        let collidePoint = (ball.y - (player.y + player.height/2));
+        colidePoint = collidePoint / (player.height/2);
+        let angleRad = (Math.PI/4) * collidePoint;
+        //Change direction of ball
+        let direction = (ball.x < canvas.width/2) ? 1 : -1;
+        ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+        ball.velocityY = ball.speed * Math.sin(angleRad);
+        //Increase speed of ball when collide with paddle
+        ball.speed += 0.1;
+    }
+}
+//Collison (When the ball hits the paddle)
+function collision(b, p) {
+    p.top = p.y;
+    p.bottom = p.y + p.height;
+    p.left = p.x;
+    p.right = p.x + p.width;
+    
+    b.top = b.y - b.radius;
+    b.bottom = b.y + b.radius;
+    b.left = b.x - b.radius;
+    b.right = b.x + b.radius;
+    
+    return b.right < p.left && b.top < p.bottom && b.left < p.right && b.bottom > p.top;
 }
 
 //Render the game
