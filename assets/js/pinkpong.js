@@ -70,6 +70,15 @@ const ball = {
     speed : 5,
     color : "#FF00AB"
 }
+//Move the ball
+function update() {
+    ball.x += velocityX; X+
+    ball.y += velocityY; Y+
+    if (ball.y + ball.radius > canvas.height ||
+        ball.y - ball.radius < 0) {
+            velocityY = - velocityY;
+        }
+}
 
 //Render the game
 function render() {
