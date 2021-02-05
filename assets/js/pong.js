@@ -96,9 +96,12 @@ class Pong {
     collide(player, ball) {
         if (player.left < ball.right && player.right > ball.left && 
             player.top < ball.bottom && player.bottom > ball.top) {
-            ball.vel.x = -ball.vel.x; 
+            //Make ball take mor eunpredictable directions after it hits a player rectangle 
+            const len = ball.vel.len;   
+            ball.vel.x = -ball.vel.x;
+            ball.vel.y += 200 * (Math.random() - 0.3); 
             //Increase the speed of the ball with 10% everytime it hits a player rectangle
-            ball.vel.len *= 1.1;   
+            ball.vel.len = len * 1.1;   
             }
     }
     draw() {
@@ -130,7 +133,7 @@ class Pong {
         if (this.ball.vel.x === 0 && this.ball.vel.y === 0) {
             //Make ball go in random directions when game is started
             //Apply the methos that gives the ball consistent speed
-            this.ball.vel.x = 200 * (Math.random() > .3 ? 1 : -1);
+            this.ball.vel.x = 200 * (Math.random() > 0.3 ? 1 : -1);
             this.ball.vel.y = 200 * (Math.random() * 2 -1);
             this.ball.vel.len = 150;
         }
