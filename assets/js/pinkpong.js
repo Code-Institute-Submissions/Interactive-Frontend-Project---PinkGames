@@ -31,7 +31,7 @@ const ball = {
     radius: 10,
     velocityX: 5,
     velocityY: 5,
-    speed: 2,
+    speed: 5,
     color: "#FF00AB"
 };
 
