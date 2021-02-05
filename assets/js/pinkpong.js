@@ -10,7 +10,7 @@ const user = {
     x: 0,
     y: cvs.height / 2 - 100 / 2,
     width: 20,
-    height: 50,
+    height: 100,
     color: "#FF00AB",
     score: 0
 };
@@ -19,7 +19,7 @@ const com = {
     x: cvs.width - 20,
     y: cvs.height / 2 - 100 / 2,
     width: 20,
-    height: 50,
+    height: 100,
     color: "#FF00AB",
     score: 0
 };
