@@ -26,5 +26,42 @@ function drawText(text, x, y, color) {
     ctx.fillText(text, x, y);
 }
 
+//Paddles for the player and the computer
+const user = {
+    x: 0,
+    y: canvas.height/2 - 100/2,
+    width: 10,
+    height: 100,
+    color: "#FF00AB",
+    score: 0
+}
+
+const com = {
+    x: canvas.width - 10,
+    y: canvas.height/2 - 100/2,
+    width: 10,
+    height: 100,
+    color: "#FF00AB",
+    score: 0
+}
+
+//The net
+const net = {
+    x: canvas.width/2 - 2/2,
+    y: 0,
+    height: 10,
+    width: 2,
+    color: "#FF00AB", 
+}
+//Draw the net
+function drawNet(){
+    for(let i = 0; i <= canvas.height; i+=15){
+        drawRect(net.x, net.y + i, net.width, net.height, net.color);
+    }
+}
+
+drawRect(user.x, user.y, user.width, user.height, user.color);
+drawRect(com.x, com.y, com.width, com.height, com.color);
+
 
 
