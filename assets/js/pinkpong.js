@@ -70,15 +70,28 @@ const ball = {
     speed : 5,
     color : "#FF00AB"
 }
-//Move the ball
-function update() {
-    ball.x += velocityX; X+
-    ball.y += velocityY; Y+
-    if (ball.y + ball.radius > canvas.height ||
-        ball.y - ball.radius < 0) {
-            velocityY = - velocityY;
-        }
 
+
+
+//Reset the ball
+function resetBall() {
+    ball.x = canvas.width/2;
+    ball.y = canvas.height/2;
+    ball.speed = 5;
+    ball.velocityX = -ball.velocityX;
+}
+
+//Update the game score
+function update() {
+    if (ball.x - ball.radius < 0) {
+        com.score++;
+        resetBall();
+    }else if (ball.x + ball.radius > canvas.width) {
+        user.score++;
+        resetBall();
+
+    }
+}    
     //Collision detection of paddle and ball
     let player = (ball.x < canvas.width/2) ? user : com;
     
@@ -95,7 +108,7 @@ function update() {
         //Increase speed of ball when collide with paddle
         ball.speed += 0.1;
     }
-}
+
 //Collison (When the ball hits the paddle)
 function collision(b, p) {
     p.top = p.y;
