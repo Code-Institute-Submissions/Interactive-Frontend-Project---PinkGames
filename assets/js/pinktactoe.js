@@ -52,8 +52,9 @@ function clickedBox(element) {
         players.classList.add("active");
         element.setAttribute("id", playerSign);
     }
-    //Call the winner function
+    //Call the winner of the game
     selectWinner();
+    gameBoard.style.pointerEvents = "none";
     //When one 'span' has been selected, it can't be selected again
     element.style.pointerEvents = "none";
     //Random delay in time when the computer player will makes its next move
@@ -94,9 +95,12 @@ function com() {
             players.classList.remove("active");
             allBox[randomBox].setAttribute("id", playerSign);
         }
+        //Calling the winner of the game
+        selectWinner();
     }
     //After a box has been played it can't be played again
     allBox[randomBox].style.pointerEvents = "none";
+    gameBoard.style.pointerEvents = "auto";
     playerSign = "X";
 }
 
