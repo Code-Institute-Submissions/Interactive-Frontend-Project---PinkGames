@@ -46,7 +46,12 @@ function clickedBox(element) {
     }
     //When one 'span' has been selected, it can't be selected again
     element.style.pointerEvents = "none";
-    com();
+    //Random delay in time when the computer player will makes its next move
+    let delayTime = ((Math.random() * 2000) + 300).toFixed();
+    setTimeout(() => {
+        //Calling the computer player function with the delayed time
+        com();
+    }, delayTime);
 };
 
 //The computer player click function
