@@ -1,12 +1,24 @@
 * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             background: pink;
             font-family: 'Bowlby One SC', cursive;
+        }
+
+        .tactoe-text {
+            width: 80%;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .tactoe-text p {
+            font-family: 'Bowlby One SC', cursive;
+            font-size: 16px;
+            line-height: 25px;
+            letter-spacing: 2px;
         }
 
         .select, .game-board, .result {
@@ -202,4 +214,24 @@
             font-family: 'Bowlby One SC', cursive;
             transition: all 0.5s ease;
             border-radius: 10px;
+        }
+
+        .back button {
+            position: absolute;
+            bottom: 5%;
+            margin: 10%;
+            width: 80%;
+            height: 40px;
+            background: pink;
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
+        }
+
+        .back button a {
+            text-decoration: none;
+            color: #050505;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-family: 'Bowlby One SC', cursive;
+            cursor: pointer;
         }
