@@ -19,31 +19,40 @@
             font-family: 'Bowlby One SC', cursive;
         }
 
+        /*Game heading */
         h1 {
             font-family: 'Bungee Shade', cursive;
             font-size: 70px;
             margin-top: 10%;
         }
 
+        /* Game instructions */
         p {
             font-size: 20px;
-            width: 80%;
-            margin: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
             line-height: 30px;
             letter-spacing: 2px;
         }
 
+        /* Players text */
         .players {
+            font-size: 15px;
             color: #FF00AB;
             display: flex;
             justify-content: space-evenly;
         }
 
+        /* Dice images */
         img {
-            width: 40%;
-            height: 40%;
+            width: 25%;
+            height: 25%;
+            margin-left: 5%;
+            margin-right: 5%;
+            justify-content: space-evenly;
         }
 
+        /* Play button */
         .btn {
             border-radius: 10px;
             color: #FF00AB;
@@ -60,11 +69,11 @@
         /* Back to game menu */
         .back button {
             bottom: 5%;
-            margin: 10%;
+            margin: 5%;
             width: 80%;
             height: 40px;
             background: pink;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5);
         }
 
         .back button a {
@@ -72,24 +81,25 @@
             color: #050505;
             letter-spacing: 4px;
             text-transform: uppercase;
-            font-size: 20px;
             font-family: 'Bowlby One SC', cursive;
             cursor: pointer;
         }
-
     </style>
     <!--Game heading & iinstructions-->
-    <h1>Pink Dice</h1>
-    <p>Press the button to roll the dice. The one with the hightest number is the winner!</p>
+    <div class="heading">
+        <h1>Pink Dice</h1>
+        <p>Press the button to roll the dice. The one with the hightest number is the winner!</p>
+    </div>
     <!--The players-->
-    <div class="players">
-        <h2>Player 1</h2>
-        <h2>Player 2</h2>
-    </div>
-    <div>
-        <img src="assets/media/pic/pinkdice/dice1.png" alt="Dice no 1">
-        <img src="assets/media/pic/pinkdice/dice2.png" alt="Dice no 2">
-    </div>
+        <div class="players">
+            <h2>Player 1</h2>
+            <h2>Player 2</h2>
+        </div>
+
+        <div>
+            <img src="assets/media/pic/pinkdice/dices/1.png" alt="Dice no 1">
+            <img src="assets/media/pic/pinkdice/dices/2.png" alt="Dice no 2">
+        </div>
     <!--Button to play game-->
     <button type="button" class="btn">Play!</button>
     <!--Button to game menu-->
