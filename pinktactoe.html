@@ -23,8 +23,7 @@
             font-family: 'Bowlby One SC', cursive;
         }
 
-        .select,
-        .game-board {
+        .select, .game-board, .result {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -69,7 +68,8 @@
             transition: all 0.5s ease;
         }
 
-        .options button:hover {
+        .options button:hover,
+        .result .btn button:hover {
             transform: scale(0.9);
         }
 
@@ -81,7 +81,9 @@
             margin-left: 10px;
         }
 
-       
+       .game-board {
+           display: none;
+       }
 
         .game-board .details {
             background: #FF8BD9;
@@ -142,6 +144,40 @@
             line-height: 100px;
             color: #FF00AB;
         }
+
+        .result {
+            background: #FF8BD9;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .result .winner-text {
+            font-size: 25px;
+            display: flex;
+            text-align: center;
+        }
+
+        .result .btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .result .btn button {
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: pink;
+            color: #FF00AB;
+            font-family: 'Bowlby One SC', cursive;
+            transition: all 0.5s ease;
+            border-radius: 10px;
+        }
+
+
     </style>
     <!--Player Selection-->
     <div class="select">
@@ -184,7 +220,10 @@
 
     <!--Result Box-->
     <div class="result">
-
+        <div class="winner-text">Player X is the winner!</div>
+        <div class="btn">
+            <button>Play Again</button>
+        </div>
     </div>
 
 
