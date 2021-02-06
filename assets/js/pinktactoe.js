@@ -45,6 +45,7 @@ function clickedBox(element) {
     }
     //When one 'span' has been selected, it can't be selected again
     element.style.pointerEvents = "none";
+    com();
 };
 
 //The computer player click function
@@ -56,7 +57,12 @@ function com() {
         if(allBox[i].childElementCount == 0) {
             //The span has no children
             array.push(i);
+            //console.log(i);
         }
     }
+    //Random index from the array that the computer player will use to select a span
+    let randomBox = array[Math.floor(Math.random() * array.length)];
+    console.log(randomBox);
+    //console.log(array);
 }
 
