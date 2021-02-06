@@ -11,9 +11,45 @@
 </head>
 
 <body>
+    <style>
+        body {
+            margin: auto;
+            text-align: center;
+            background: pink;
+            font-family: 'Bowlby One SC', cursive;
+        }
 
+        h1 {
+            font-family: 'Bungee Shade', cursive;
+            font-size: 50px;
+        }
 
-    
-<script src="assets/js/pinkdice.js"></script>
+        .player1 {
+            display: inline-block;
+            margin-right: 10%;
+        }
+
+        .player2 {
+            display: inline-block;
+            margin-left: 10%;
+        }
+    </style>
+    <!--Game heading & iinstructions-->
+    <h1>Pink Dice</h1>
+    <p>Press the button to roll the dice. The one with the hightest number is the winner!</p>
+    <!--The players-->
+    <div class="player1">
+        <h2>Player 1</h2>
+    </div>
+    <div class="player2">
+        <h2>Player 2</h2>
+    </div>
+    <div>
+        <img src="assets/media/pic/pinkdice/dice1.png" alt="Dice no 1">
+        <img src="assets/media/pic/pinkdice/dice2.png" alt="Dice no 2">
+    </div>
+
+    <script src="assets/js/pinkdice.js"></script>
 </body>
+
 </html>
