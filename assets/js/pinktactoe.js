@@ -7,7 +7,7 @@ const select = document.querySelector(".select"),
     players = document.querySelector(".players"),
     result = document.querySelector(".result"),
     winnerText = result.querySelector(".winner-text"),
-    replayBtn = document.querySelector("button");
+    replayBtn = result.querySelector("button");
 
 //When window is loaded
 window.onload = () => {
@@ -144,5 +144,28 @@ function selectWinner() {
         }, 1000);
         //Text announcing the winner
         winnerText.innerHTML = `Player <p>${playerSign}</p> won!`;
+    } else {
+        //If the game comes to a draw
+        if (getId(1) != "" && getId(2) != ""
+            && getId(3) != "" && getId(4) != ""
+            && getId(5) != "" && getId(6) != ""
+            && getId(7) != "" && getId(8) != ""
+            && getId(9) != "") {
+            runCom = false;
+            com(runCom);
+            //Delay the result box
+            setTimeout(() => {
+                gameBoard.classList.remove("show");
+                result.classList.add("show");
+                //1s delay
+            }, 1000);
+            //Text announcing the winner
+            winnerText.textContent = `It's a draw!`;
+        }
     }
+}
+//Restart the game when the winner is announced
+replayBtn.onclick = ()=>{
+    //Reloads the page
+    window.location.reload();
 }
