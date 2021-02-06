@@ -31,18 +31,26 @@ window.onload = () => {
 //Fontawesome icons for X & O
 let xIcon = "fas fa-times";
 let oIcon = "far fa-circle";
+//Player X
+let playerSign = "X"; 
 
 //The player click function
 function clickedBox(element) {
     //console.log(element);
     if (players.classList.contains("player")) {
+        //If player is O then the sign will change
+        playerSign = "O";
         //Adding the 'circle-icon' to the O-player
         element.innerHTML = `<i class="${oIcon}"></i>`;
         players.classList.add("active");
+        //If the player select O, then we'll change the playerSign to O
+        playerSign = "O";
+        element.setAttribute("id", playerSign);
         //Adding the 'times-icon' to the X-player
     } else {
         element.innerHTML = `<i class="${xIcon}"></i>`;
         players.classList.add("active");
+        element.setAttribute("id", playerSign);
     }
     //When one 'span' has been selected, it can't be selected again
     element.style.pointerEvents = "none";
@@ -56,6 +64,8 @@ function clickedBox(element) {
 
 //The computer player click function
 function com() {
+    //If player has the X id, the computer will have the O id
+    playerSign = "O";
     //Unselcted box index inside this empty array
     let array = [];
     for (let i = 0; i < allBox.length; i++) {
@@ -73,13 +83,18 @@ function com() {
         if (players.classList.contains("player")) {
             //Adding the 'times-icon' to the X-player
             allBox[randomBox].innerHTML = `<i class="${xIcon}"></i>`;
-            players.classList.add("active");
+            players.classList.remove("active");
+            //If the player has the O id, the comuter will have the X id
+            playerSign = "X";
+            allBox[randomBox].setAttribute("id", playerSign);
             //Adding the 'circle-icon' to the O-player
         } else {
             allBox[randomBox].innerHTML = `<i class="${oIcon}"></i>`;
-            players.classList.add("active");
+            players.classList.remove("active");
+            allBox[randomBox].setAttribute("id", playerSign);
         }
     }
-    //console.log(array);
+    //After a box has been played it can't be played again
+    allBox[randomBox].style.pointerEvents = "none";
 }
 
