@@ -32,7 +32,7 @@ window.onload = () => {
 let xIcon = "fas fa-times";
 let oIcon = "far fa-circle";
 //Player X
-let playerSign = "X"; 
+let playerSign = "X";
 
 //The player click function
 function clickedBox(element) {
@@ -52,6 +52,8 @@ function clickedBox(element) {
         players.classList.add("active");
         element.setAttribute("id", playerSign);
     }
+    //Call the winner function
+    selectWinner();
     //When one 'span' has been selected, it can't be selected again
     element.style.pointerEvents = "none";
     //Random delay in time when the computer player will makes its next move
@@ -78,7 +80,6 @@ function com() {
     }
     //Random index from the array that the computer player will use to select a span
     let randomBox = array[Math.floor(Math.random() * array.length)];
-    console.log(randomBox);
     if (array.length > 0) {
         if (players.classList.contains("player")) {
             //Adding the 'times-icon' to the X-player
@@ -96,5 +97,31 @@ function com() {
     }
     //After a box has been played it can't be played again
     allBox[randomBox].style.pointerEvents = "none";
+    playerSign = "X";
 }
 
+//Selectiong the winner
+function getId(idname) {
+    //Returning the id-name
+    return document.querySelector(".box" + idname).id;
+}
+
+function checkId(val1, val2, val3, sign) {
+    if (getId(val1) == sign && getId(val2) == sign && getId(val3) == sign) {
+        return true;
+    }
+}
+function selectWinner() {
+    //One of these combination will make a winner
+    if (checkId(1, 2, 3, playerSign) || 
+    checkId(4, 5, 6, playerSign) || 
+    checkId(7, 8, 9, playerSign) || 
+    checkId(1, 4, 7, playerSign) || 
+    checkId(2, 5, 8, playerSign) || 
+    checkId(3, 6, 9, playerSign) || 
+    checkId(1, 5, 9, playerSign) || 
+    checkId(3, 5, 7, playerSign)) {
+        console.log(playerSign + " " + "is the winner");
+
+    }
+}
