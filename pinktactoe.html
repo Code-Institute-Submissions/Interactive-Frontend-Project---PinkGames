@@ -9,206 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Bungee+Shade&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="assets/css/pinktactoe.css">
 </head>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: pink;
-            font-family: 'Bowlby One SC', cursive;
-        }
-
-        .select, .game-board, .result {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
-        }
-
-        .select {
-            max-width: 600px;
-            width: 80%;
-            background: #FF8BD9;
-            padding: 20px 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .select.hide {
-            opacity: 0;
-            pointer-events: none;
-            transform: translate(-50%, -50%) scale (0.9);
-        }
-
-        .select header {
-            font-family: 'Bungee Shade', cursive;
-            font-size: 50px;
-            padding-bottom: 20px;
-        }
-
-        .select .type {
-            font-size: 20px;
-            padding-bottom: 30px;
-        }
-
-        .select .options {
-            display: flex;
-            width: 100%;
-        }
-
-        .options button {
-            width: 50%;
-            font-size: 80px;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: pink;
-            color: #FF00AB;
-            font-family: 'Bowlby One SC', cursive;
-            transition: all 0.5s ease;
-        }
-
-        .options button:hover,
-        .result .btn button:hover {
-            transform: scale(0.9);
-        }
-
-        .options button.playerX {
-            margin-right: 10px;
-        }
-
-        .options button.playerO {
-            margin-left: 10px;
-        }
-
-       .game-board {
-            opacity: 0;
-            pointer-events: none;
-            transform: translate(-50%, -50%) scale (0.9);
-       }
-
-       .game-board.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translate(-50%, -50%) scale (1);
-       }
-
-        .game-board .details {
-            background: #FF8BD9;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .game-board .details .players {
-            display: flex;
-            width: 100%;
-            position: relative;
-            justify-content: space-between;
-          }
-
-        .game-board .details span {
-            width: 100%;
-            border-radius: 10px;
-            padding:  8px;
-            font-size: 20px;
-            cursor: default;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-            transition: all 0.5s ease;
-        }
-
-        .details span:first-child {
-            color: black;
-        }
-
-        .details .slider {
-            position: absolute;
-            top: 0;
-            left: 0%;
-            height: 100%;
-            width: 50%;
-            background: pink;
-            border-radius: 10px;
-            z-index: 2;
-            transition: all 0.5s ease;
-        }
-
-        .players.active span:first-child {
-            color: black;
-        }
-
-        .players.active span:nth-child(2) {
-            color: black;
-        }
-
-        .players.active .slider {
-            left: 50%;
-        }
-
-        .game-board .game-area {
-            margin-top: 20px;
-        }
-
-        .game-board section {
-            display: flex;
-        }
-
-        .game-board section span {
-            display: block;
-            height: 100px;
-            width: 100px;
-            margin: 3px;
-            border-radius: 10px;
-            background: #FF8BD9;
-            font-size: 40px;
-            text-align: center;
-            line-height: 100px;
-            color: #FF00AB;
-        }
-
-        .result {
-            background: #FF8BD9;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 600px;
-            display: none;
-        }
-
-        .result .winner-text {
-            font-size: 25px;
-            display: flex;
-            text-align: center;
-        }
-
-        .result .btn {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .result .btn button {
-            font-size: 30px;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: pink;
-            color: #FF00AB;
-            font-family: 'Bowlby One SC', cursive;
-            transition: all 0.5s ease;
-            border-radius: 10px;
-        }
-
-
-    </style>
     <!--Player Selection-->
     <div class="select">
         <header>Pink Tac Toe</header>
@@ -247,7 +51,6 @@
             </section>
         </div>
     </div>
-
     <!--Result Box-->
     <div class="result">
         <div class="winner-text">Player X is the winner!</div>
@@ -255,7 +58,6 @@
             <button>Play Again</button>
         </div>
     </div>
-
 
     <script src="assets/js/pinktactoe.js"></script>
 
