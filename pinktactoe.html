@@ -11,6 +11,40 @@
 </head>
 
 <body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: pink;
+        font-family: 'Bowlby One SC', cursive;
+    }
+
+    .select {
+        position: absolute;
+        max-width: 600px;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #FF8BD9;
+        padding: 20px 30px 20px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .select header {
+        font-family: 'Bungee Shade', cursive;
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+</style>
+
+
+
 
     <div class="tactoe-text">
         <h1>Pink Tac Toe</h1>
@@ -19,6 +53,20 @@
             magna aliqua.</p>
         <p>Let's play!</p>
     </div>
+
+    <div class="select">
+        <header>Pink Tac Toe</header>
+        <div class="choice">
+            <div class="type">Select which symbol you want to play</div>
+            <div class="options">
+                <button class="playerX">X</button>
+                <button class="playerO">O</button>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="back">
         <button><a href="index.html">Go back to game menu</a></button>
     </div>
