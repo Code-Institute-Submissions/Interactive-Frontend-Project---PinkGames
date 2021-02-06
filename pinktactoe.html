@@ -11,74 +11,123 @@
 </head>
 
 <body>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        background: pink;
-        font-family: 'Bowlby One SC', cursive;
-    }
+        body {
+            background: pink;
+            font-family: 'Bowlby One SC', cursive;
+        }
 
-    .select {
-        position: absolute;
-        max-width: 600px;
-        width: 80%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #FF8BD9;
-        padding: 20px 30px 20px;
-        border-radius: 20px;
-        text-align: center;
-        color: #FF00AB; 
-    }
+        .select,
+        .game-board {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    .select header {
-        font-family: 'Bungee Shade', cursive;
-        font-size: 50px;
-        padding-bottom: 20px;
-    }
+        .select {
+            max-width: 600px;
+            width: 80%;
+            background: #FF8BD9;
+            padding: 20px 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            display: none;
+        }
 
-    .select .type {
-        font-size: 20px;
-        padding-bottom: 30px;
-    }
+        .select header {
+            font-family: 'Bungee Shade', cursive;
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
 
-    .select .options {
-        display: flex;
-        width: 100%;
-    }
+        .select .type {
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
 
-    .options button {
-        width: 50%;
-        font-size: 80px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background: pink;
-        color: #FF00AB;
-        font-family: 'Bowlby One SC', cursive;
-        transition: all 0.5s ease;
-    }
+        .select .options {
+            display: flex;
+            width: 100%;
+        }
 
-    .options button:hover {
-        transform: scale(0.9);
-    }
+        .options button {
+            width: 50%;
+            font-size: 80px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: pink;
+            color: #FF00AB;
+            font-family: 'Bowlby One SC', cursive;
+            transition: all 0.5s ease;
+        }
 
-    .options button.playerX {
-        margin-right: 10px;
-    }
+        .options button:hover {
+            transform: scale(0.9);
+        }
 
-    .options button.playerO {
-        margin-left: 10px;
-    }
+        .options button.playerX {
+            margin-right: 10px;
+        }
 
-</style>
+        .options button.playerO {
+            margin-left: 10px;
+        }
 
+        .game-board .details {
+            background: #FF8BD9;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .game-board .details .players {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+          }
+
+        .game-board .details span {
+            width: 100%;
+            border-radius: 10px;
+            padding:  8px;
+            font-size: 20px;
+            cursor: default;
+            text-align: center;
+        }
+
+        .details span.active {
+            background: pink;
+        }
+
+        .game-board .game-area {
+            margin-top: 20px;
+        }
+
+        .game-board section {
+            display: flex;
+        }
+
+        .game-board section span {
+            display: block;
+            height: 100px;
+            width: 100px;
+            margin: 3px;
+            border-radius: 10px;
+            background: #FF8BD9;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+            color: #FF00AB;
+        }
+    </style>
+    <!--Player Selection-->
     <div class="select">
         <header>Pink Tac Toe</header>
         <div class="choice">
@@ -89,6 +138,35 @@
             </div>
         </div>
     </div>
+    <!--Game Board-->
+    <div class="game-board">
+        <div class="details">
+            <div class="players">
+                <span class="Xturn active">X's turn</span>
+                <span class="Oturn">O's turn</span>
+            </div>
+        </div>
+        <div class="game-area">
+            <section>
+                <span class="box1"></span>
+                <span class="box2"></span>
+                <span class="box3"></span>
+            </section>
+            <section>
+                <span class="box4"></span>
+                <span class="box5"></span>
+                <span class="box6"></span>
+            </section>
+            <section>
+                <span class="box7"></span>
+                <span class="box8"></span>
+                <span class="box9"></span>
+            </section>
+        </div>
+    </div>
+
+
+
 
     <script src="assets/js/pinktactoe.js"></script>
 
