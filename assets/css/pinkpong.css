@@ -3,7 +3,7 @@
             align-items: center;
             text-align: center;
         }
-
+        /* Game instructions */
         .pong-text {
             width: 90%;
             padding: 5%;
@@ -31,7 +31,7 @@
             padding-left: 10%;
             padding-right: 10%;
         }
-
+        /* Return to game menu button */
         button {
             margin: 5%;
             width: 80%;
@@ -49,7 +49,7 @@
             font-family: 'Bowlby One SC', cursive;
             cursor: pointer;
         }
-
+        /* Game canvas */
         canvas {
             image-rendering: pixelated;
             border: solid 3px black;

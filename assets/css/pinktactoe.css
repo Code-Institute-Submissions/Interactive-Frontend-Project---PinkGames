@@ -7,7 +7,7 @@
             background: pink;
             font-family: 'Bowlby One SC', cursive;
         }
-
+        /* Game instructions */
         .tactoe-text {
             width: 80%;
             padding: 10%;
@@ -20,7 +20,7 @@
             line-height: 25px;
             letter-spacing: 2px;
         }
-
+        /* Transition between parts of the game */
         .select, .game-board, .result {
             position: absolute;
             top: 50%;
@@ -28,7 +28,7 @@
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
         }
-
+        /* Select player */
         .select {
             max-width: 600px;
             width: 80%;
@@ -84,7 +84,7 @@
         .options button.playerO {
             margin-left: 10px;
         }
-
+        /* The board of the game */
         .game-board {
             opacity: 0;
             pointer-events: none;
@@ -170,7 +170,7 @@
             line-height: 100px;
             color: #FF00AB;
         }
-
+        /* The result og the game */
         .result {
             background: #FF8BD9;
             padding: 30px;
@@ -215,7 +215,7 @@
             transition: all 0.5s ease;
             border-radius: 10px;
         }
-
+        /* Back to game menu */
         .back button {
             position: absolute;
             bottom: 5%;
