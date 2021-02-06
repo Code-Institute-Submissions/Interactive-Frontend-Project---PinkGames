@@ -34,25 +34,50 @@
         padding: 20px 30px 20px;
         border-radius: 20px;
         text-align: center;
+        color: #FF00AB; 
     }
 
     .select header {
         font-family: 'Bungee Shade', cursive;
-        font-size: 40px;
+        font-size: 50px;
         padding-bottom: 20px;
     }
+
+    .select .type {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    .select .options {
+        display: flex;
+        width: 100%;
+    }
+
+    .options button {
+        width: 50%;
+        font-size: 80px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: pink;
+        color: #FF00AB;
+        font-family: 'Bowlby One SC', cursive;
+        transition: all 0.5s ease;
+    }
+
+    .options button:hover {
+        transform: scale(0.9);
+    }
+
+    .options button.playerX {
+        margin-right: 10px;
+    }
+
+    .options button.playerO {
+        margin-left: 10px;
+    }
+
 </style>
-
-
-
-
-    <div class="tactoe-text">
-        <h1>Pink Tac Toe</h1>
-        <h5>Play tic tac toe in the wonderful color - pink</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.</p>
-        <p>Let's play!</p>
-    </div>
 
     <div class="select">
         <header>Pink Tac Toe</header>
@@ -65,11 +90,6 @@
         </div>
     </div>
 
-
-
-    <div class="back">
-        <button><a href="index.html">Go back to game menu</a></button>
-    </div>
     <script src="assets/js/pinktactoe.js"></script>
 
 </body>
