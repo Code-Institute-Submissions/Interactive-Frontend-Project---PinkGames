@@ -47,5 +47,16 @@ function clickedBox(element) {
     element.style.pointerEvents = "none";
 };
 
-
+//The computer player click function
+function com() {
+    //Unselcted box index inside this empty array
+    let array = [];
+    for (let i = 0; i < allBox.length; i++) {
+        //If span has no children
+        if(allBox[i].childElementCount == 0) {
+            //The span has no children
+            array.push(i);
+        }
+    }
+}
 
