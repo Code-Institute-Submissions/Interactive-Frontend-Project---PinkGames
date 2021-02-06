@@ -1,4 +1,4 @@
-// Code taken from: https://gijsroge.github.io/tilt.js/ (GitHub: gijsroge/tilt.js)
+// I have taken the code from: https://gijsroge.github.io/tilt.js/ (GitHub: gijsroge/tilt.js)
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
