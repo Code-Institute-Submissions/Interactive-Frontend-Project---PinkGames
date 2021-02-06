@@ -178,7 +178,11 @@
         .result .winner-text {
             font-size: 25px;
             display: flex;
-            text-align: center;
+            justify-content: center;
+        }
+
+        .result .winner-text p {
+            margin: 0 5px;
         }
 
         .result .btn {

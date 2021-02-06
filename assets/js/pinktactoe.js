@@ -142,5 +142,7 @@ function selectWinner() {
             result.classList.add("show");
             //1s delay
         }, 1000);
+        //Text announcing the winner
+        winnerText.innerHTML = `Player <p>${playerSign}</p> won!`;
     }
 }
