@@ -1,9 +1,10 @@
 //All required elements
 const select = document.querySelector(".select"),
-selectXBtn = select.querySelector(".playerX"),
-selectOBtn = select.querySelector(".playerO");
+    selectXBtn = select.querySelector(".playerX"),
+    selectOBtn = select.querySelector(".playerO");
 gameBoard = document.querySelector(".game-board");
 allBox = document.querySelectorAll("section span");
+players = document.querySelector(".players");
 
 //When window is loaded
 window.onload = () => {
@@ -23,12 +24,22 @@ window.onload = () => {
         select.classList.add("hide");
         //Will shoe the game board when the playerO button is clicked
         gameBoard.classList.add("show");
+        //Three class names in the player element
+        players.setAttribute("class", "players active player");
     }
 }
-
-let XIcon = "fas fa-times";
-let OIcon = "far fa-circle";
+//Fontawesome icons for X & O
+let xIcon = "fas fa-times";
+let oIcon = "far fa-circle";
 
 function clickedBox(element) {
 
-}
+    if (players.classList.contains("player")) {
+        //Adding the 'circle-icon' to the O-player
+        element.innerHTML = `<i class="${oIcon}"></i>`;
+        //Adding the 'times-icon' to the X-player
+    } else {
+        element.innerHTML = `<i class="${xIcon}"></i>`;
+    }
+
+};
