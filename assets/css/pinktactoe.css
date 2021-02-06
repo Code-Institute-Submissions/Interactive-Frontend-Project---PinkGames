@@ -73,22 +73,22 @@
             margin-left: 10px;
         }
 
-       .game-board {
+        .game-board {
             opacity: 0;
             pointer-events: none;
-            transform: translate(-50%, -50%) scale (0.9);
-       }
-
-       .game-board.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translate(-50%, -50%) scale (1);
-       }
+            transform: translate(-50%, -50%) scale(0.9);
+        }
 
         .game-board .details {
             background: #FF8BD9;
             padding: 10px;
             border-radius: 10px;
+        }
+
+        .game-board.show{
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .game-board .details .players {
@@ -164,7 +164,15 @@
             padding: 30px;
             border-radius: 10px;
             max-width: 600px;
-            display: none;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale (0.9);
+       }
+
+       .result.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale (1);
         }
 
         .result .winner-text {

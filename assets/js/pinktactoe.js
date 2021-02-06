@@ -4,7 +4,10 @@ const select = document.querySelector(".select"),
     selectOBtn = select.querySelector(".playerO"),
     gameBoard = document.querySelector(".game-board"),
     allBox = document.querySelectorAll("section span"),
-    players = document.querySelector(".players");
+    players = document.querySelector(".players"),
+    result = document.querySelector(".result"),
+    winnerText = result.querySelector(".winner-text"),
+    replayBtn = document.querySelector("button");
 
 //When window is loaded
 window.onload = () => {
@@ -133,5 +136,11 @@ function selectWinner() {
         //When someone has won the game the runcom will stop running
         runCom = false;
         com(runCom);
+        //Delay the result box
+        setTimeout(() => {
+            gameBoard.classList.remove("show");
+            result.classList.add("show");
+            //1s delay
+        }, 1000);
     }
 }
