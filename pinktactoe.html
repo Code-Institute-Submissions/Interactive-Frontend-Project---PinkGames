@@ -81,6 +81,8 @@
             margin-left: 10px;
         }
 
+       
+
         .game-board .details {
             background: #FF8BD9;
             padding: 10px;
@@ -90,6 +92,7 @@
         .game-board .details .players {
             display: flex;
             width: 100%;
+            position: relative;
             justify-content: space-between;
           }
 
@@ -100,10 +103,23 @@
             font-size: 20px;
             cursor: default;
             text-align: center;
+            position: relative;
+            z-index: 5;
         }
 
-        .details span.active {
+        .details span:first-child {
+            color: black;
+        }
+
+        .details .slider {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            height: 100%;
+            width: 50%;
             background: pink;
+            border-radius: 10px;
+            z-index: 2;
         }
 
         .game-board .game-area {
@@ -142,8 +158,9 @@
     <div class="game-board">
         <div class="details">
             <div class="players">
-                <span class="Xturn active">X's turn</span>
+                <span class="Xturn">X's turn</span>
                 <span class="Oturn">O's turn</span>
+                <div class="slider"></div>
             </div>
         </div>
         <div class="game-area">
@@ -165,7 +182,10 @@
         </div>
     </div>
 
+    <!--Result Box-->
+    <div class="result">
 
+    </div>
 
 
     <script src="assets/js/pinktactoe.js"></script>
