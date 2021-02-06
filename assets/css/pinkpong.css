@@ -25,6 +25,11 @@
         p {
             font-family: 'Bowlby One SC', cursive;
             font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 2px;
+            width: 80%;
+            padding-left: 10%;
+            padding-right: 10%;
         }
 
         button {
@@ -44,7 +49,7 @@
             font-family: 'Bowlby One SC', cursive;
             cursor: pointer;
         }
-        
+
         canvas {
             image-rendering: pixelated;
             border: solid 3px black;
