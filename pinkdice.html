@@ -57,6 +57,26 @@
             cursor: pointer;
         }
 
+        /* Back to game menu */
+        .back button {
+            bottom: 5%;
+            margin: 10%;
+            width: 80%;
+            height: 40px;
+            background: pink;
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
+        }
+
+        .back button a {
+            text-decoration: none;
+            color: #050505;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-family: 'Bowlby One SC', cursive;
+            cursor: pointer;
+        }
+
     </style>
     <!--Game heading & iinstructions-->
     <h1>Pink Dice</h1>
@@ -72,6 +92,10 @@
     </div>
     <!--Button to play game-->
     <button type="button" class="btn">Play!</button>
+    <!--Button to game menu-->
+    <div class="back">
+        <button><a href="index.html">Go back to game menu</a></button>
+    </div>
 
     <script src="assets/js/pinkdice.js"></script>
 </body>
