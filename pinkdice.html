@@ -34,13 +34,29 @@
         }
 
         .players {
+            color: #FF00AB;
             display: flex;
             justify-content: space-evenly;
         }
 
         img {
             width: 40%;
+            height: 40%;
         }
+
+        .btn {
+            border-radius: 10px;
+            color: #FF00AB;
+            font-size: 40px;
+            background: #FF8BD9;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            border: none;
+            font-family: 'Bowlby One SC', cursive;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+
     </style>
     <!--Game heading & iinstructions-->
     <h1>Pink Dice</h1>
@@ -54,6 +70,8 @@
         <img src="assets/media/pic/pinkdice/dice1.png" alt="Dice no 1">
         <img src="assets/media/pic/pinkdice/dice2.png" alt="Dice no 2">
     </div>
+    <!--Button to play game-->
+    <button type="button" class="btn">Play!</button>
 
     <script src="assets/js/pinkdice.js"></script>
 </body>
