@@ -28,6 +28,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
         }
 
         .select {
@@ -37,7 +38,12 @@
             padding: 20px 30px 20px;
             border-radius: 20px;
             text-align: center;
-            display: none;
+        }
+
+        .select.hide {
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale (0.9);
         }
 
         .select header {
@@ -82,7 +88,15 @@
         }
 
        .game-board {
-           display: none;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale (0.9);
+       }
+
+       .game-board.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale (1);
        }
 
         .game-board .details {
@@ -150,6 +164,7 @@
             padding: 30px;
             border-radius: 10px;
             max-width: 600px;
+            display: none;
         }
 
         .result .winner-text {
@@ -183,7 +198,7 @@
     <div class="select">
         <header>Pink Tac Toe</header>
         <div class="choice">
-            <div class="type">Select which symbol you want to play</div>
+            <div class="type">Select the symbol you want to play</div>
             <div class="options">
                 <button class="playerX">X</button>
                 <button class="playerO">O</button>
