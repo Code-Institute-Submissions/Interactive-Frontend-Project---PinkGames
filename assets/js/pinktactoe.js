@@ -33,6 +33,7 @@ let xIcon = "fas fa-times";
 let oIcon = "far fa-circle";
 //Player X
 let playerSign = "X";
+let runCom = true;
 
 //The player click function
 function clickedBox(element) {
@@ -61,13 +62,15 @@ function clickedBox(element) {
     let delayTime = ((Math.random() * 2000) + 300).toFixed();
     setTimeout(() => {
         //Calling the computer player function with the delayed time
-        com();
+        com(runCom);
     }, delayTime);
 };
 
 //The computer player click function
-function com() {
-    //If player has the X id, the computer will have the O id
+function com(runCom) {
+    //If runcom is tru, then the code can be run
+    if(runCom) {
+            //If player has the X id, the computer will have the O id
     playerSign = "O";
     //Unselcted box index inside this empty array
     let array = [];
@@ -103,6 +106,7 @@ function com() {
     gameBoard.style.pointerEvents = "auto";
     playerSign = "X";
 }
+    }
 
 //Selectiong the winner
 function getId(idname) {
