@@ -45,8 +45,8 @@
         canvas {
             image-rendering: pixelated;
             border: solid 3px black;
-            width: 50%;
-            height: 50vh;
+            width: 60%;
+            height: 40%;
             margin: 0 auto;
         }
 
