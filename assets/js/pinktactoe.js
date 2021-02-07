@@ -21,7 +21,7 @@ window.onload = () => {
         select.classList.add("hide");
         //Will shoe the game board when the playerX button is clicked
         gameBoard.classList.add("show");
-    }
+    };
     selectOBtn.onclick = () => {
         //Hide the selected box if playerO button is clicked
         select.classList.add("hide");
@@ -29,8 +29,8 @@ window.onload = () => {
         gameBoard.classList.add("show");
         //Three class names in the player element
         players.setAttribute("class", "players active player");
-    }
-}
+    };
+};
 //Fontawesome icons for X & O
 let xIcon = "fas fa-times";
 let oIcon = "far fa-circle";
@@ -67,7 +67,7 @@ function clickedBox(element) {
         //Calling the computer player function with the delayed time
         com(runCom);
     }, delayTime);
-};
+}
 
 //The computer player click function
 function com(runCom) {
@@ -165,7 +165,7 @@ function selectWinner() {
     }
 }
 //Restart the game when the winner is announced
-replayBtn.onclick = ()=>{
+replayBtn.onclick = () => {
     //Reloads the page
     window.location.reload();
-}
+};
