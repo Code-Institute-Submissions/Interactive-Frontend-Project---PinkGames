@@ -126,15 +126,29 @@ p {
     visibility: visible;
 }
 
+.cr {
+    text-align: center;
+    font-size: 10px;
+}
+
 @media only screen and (max-width: 320px) {
-  .game-select {
-      width: 95%;
-  }
-  .card-info h2 {
-      font-size: 20px;
-  }
-  .card-info p {
-      display: none;
-  }
+    .heading {
+        margin-top: 10%;
+    }
+    .heading h1 {
+        font-size: 40px;
+    }
+    .heading h5 {
+        font-size: 20px;
+    }
+    .game-select {
+        width: 95%;
+    } 
+    .card-info h2 {
+        font-size: 20px;
+    }
+    .card-info p {
+        display: none;
+    }
 }
 
