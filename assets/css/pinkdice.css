@@ -1,70 +1,70 @@
-        body {
-            margin: auto;
-            text-align: center;
-            background: pink;
-            font-family: 'Bowlby One SC', cursive;
-        }
+body {
+    margin: auto;
+    text-align: center;
+    background: pink;
+    font-family: 'Bowlby One SC', cursive;
+}
 
-        /*Game heading */
-        h1 {
-            font-family: 'Bungee Shade', cursive;
-            font-size: 70px;
-            margin-top: 10%;
-        }
+/*Game heading */
+h1 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 70px;
+    margin-top: 10%;
+}
 
-        /* Game instructions */
-        p {
-            font-size: 20px;
-            margin-left: 10%;
-            margin-right: 10%;
-            line-height: 30px;
-            letter-spacing: 2px;
-        }
+/* Game instructions */
+p {
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
 
-        /* Players text */
-        .players {
-            font-size: 15px;
-            color: #FF00AB;
-            display: flex;
-            justify-content: space-evenly;
-        }
+/* Players text */
+.players {
+    font-size: 15px;
+    color: #FF00AB;
+    display: flex;
+    justify-content: space-evenly;
+}
 
-        /* Dice images */
-        img {
-            width: 25%;
-            height: 25%;
-            margin-left: 5%;
-            margin-right: 5%;
-            justify-content: space-evenly;
-        }
+/* Dice images */
+img {
+    width: 25%;
+    height: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-evenly;
+}
 
-        /* Play button */
-        .btn {
-            border-radius: 10px;
-            color: #FF00AB;
-            font-size: 40px;
-            background: #FF8BD9;
-            padding: 10px 20px 10px 20px;
-            text-decoration: none;
-            border: none;
-            font-family: 'Bowlby One SC', cursive;
-            letter-spacing: 3px;
-            cursor: pointer;
-        }
+/* Play button */
+.btn {
+    border-radius: 10px;
+    color: #FF00AB;
+    font-size: 40px;
+    background: #FF8BD9;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
 
-        /* Back to game menu */
-        .back button {
-            margin: 5%;
-            width: auto;
-            height: 40px;
-            background: pink;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
-        }
+/* Back to game menu */
+.back button {
+    margin: 5%;
+    width: auto;
+    height: 40px;
+    background: pink;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
+}
 
-        .back button a {
-            text-decoration: none;
-            color: #050505;
-            text-transform: uppercase;
-            font-family: 'Bowlby One SC', cursive;
-            cursor: pointer;
-        }
+.back button a {
+    text-decoration: none;
+    color: #050505;
+    text-transform: uppercase;
+    font-family: 'Bowlby One SC', cursive;
+    cursor: pointer;
+}
