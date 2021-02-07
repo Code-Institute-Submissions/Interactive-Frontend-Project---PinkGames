@@ -120,7 +120,7 @@ function update() {
     if (collision(ball, player)) {
         //Where the ball hits the paddle
         let collidePoint = ball.y - (player.y + player.height / 2);
-        colidePoint = collidePoint / (player.height / 2);
+        collidePoint = collidePoint / (player.height / 2);
         //Angle in radian
         let angleRad = (Math.PI / 4) * collidePoint;
         //Change direction of ball

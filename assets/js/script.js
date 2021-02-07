@@ -10,4 +10,4 @@ icon.onclick = function(){
         bgMusic.pause();
         icon.src = "assets/media/music/play.png";
     }
-}
+};

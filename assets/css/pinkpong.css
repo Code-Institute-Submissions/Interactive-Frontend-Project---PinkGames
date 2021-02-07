@@ -1,52 +1,58 @@
-        body {
-            background-color: pink;
-            align-items: center;
-            text-align: center;
-        }
-        /* Game instructions */
-        .pong-text {
-            width: 90%;
-            padding: 5%;
-            text-align: center;
-        }
+body {
+    background-color: pink;
+    align-items: center;
+    text-align: center;
+}
+/* Game instructions */
+.pong-text {
+    width: 90%;
+    padding: 5%;
+    text-align: center;
+}
 
-        h1 {
-            font-family: 'Bungee Shade', cursive;
-            letter-spacing: 5px;
-            font-size: 70px;
-        }
+h1 {
+    font-family: 'Bungee Shade', cursive;
+    letter-spacing: 5px;
+    font-size: 70px;
+}
 
-        p {
-            font-family: 'Bowlby One SC', cursive;
-            font-size: 18px;
-            line-height: 30px;
-            letter-spacing: 2px;
-            width: 80%;
-            padding-left: 10%;
-            padding-right: 10%;
-        }
-        /* Return to game menu button */
-        button {
-            margin: 5%;
-            width: auto;
-            height: 40px;
-            background: pink;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
-        }
+p {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    }
+/* Return to game menu button */
+button {
+    margin: 5%;
+    width: auto;
+    height: 40px;
+    background: pink;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) ;    
+}
 
-        button a {
-            text-decoration: none;
-            color: #050505;
-            text-transform: uppercase;
-            font-family: 'Bowlby One SC', cursive;
-            cursor: pointer;
-        }
-        /* Game canvas */
-        canvas {
-            image-rendering: pixelated;
-            border: solid 3px black;
-            width: 60%;
-            height: 40%;
-            margin: 0 auto;
-        }
+button a {
+    text-decoration: none;
+    color: #050505;
+    text-transform: uppercase;
+    font-family: 'Bowlby One SC', cursive;
+    cursor: pointer;
+}
+/* Game canvas */
+canvas {
+    image-rendering: pixelated;
+    border: solid 3px black;
+    width: 45%;
+    height: 30%;
+    margin: 0 auto;
+}
 
+@media only screen and (max-width: 768px) {
+    canvas {
+        width: 60%;
+        height: 40%;
+    }
+}
