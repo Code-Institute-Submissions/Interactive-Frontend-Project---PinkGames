@@ -9,7 +9,7 @@ Welcome to the Pink Games website!
 
 A HTML5, CSS3 & JavaScript website.
 
-A live website can be found [here](https://emiberndt.github.io/Ineractive-Frontend-Project---PinkGames/)
+A live website can be found [here](https://emiberndt.github.io/Interactive-Frontend-Project---PinkGames/)
 
 ![Mockup](assets/media/pic/readme/responsive.png)
 
