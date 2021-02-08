@@ -202,6 +202,9 @@ No errors occur when I run the code in JSHint.
 
 pinkpong.js:
 
+The first time I tride to make the code for this I just couldn't get it to work. I couldn't get the scoreboard to function properly. So I decided to start from scratch again.
+After that,
+
 1  error occured. 
 
 I was having a bit of a problem with the game. It was running but not really hitting the ball in the correct way.
